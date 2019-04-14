@@ -1,4 +1,4 @@
-result	fill		60
+result	fill		200
 		
 main		sub		sp, sp, #8
 		movs		r3, #0
