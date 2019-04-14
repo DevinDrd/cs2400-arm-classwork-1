@@ -7,16 +7,20 @@ CS2400 ARM assembly programming classwork problems.
 Follow the instructions for each of the following code samples in [Compliler Explorer](https://godbolt.org).
 
 1. [printf](https://godbolt.org/z/y2YKew)
-   1. What is the library function that is called?
+   1. What is the library function that is called
+       printf()
    2. Research the implementation (source code) of this function.
    3. Find out if the program directly executes the output operation or it makes a *system call* to the operating system.
+      It makes a *system call* to the operating system to get standard input and output.
    
 2. [malloc](https://godbolt.org/z/kAZX7x)
    1. How are the arguments passed to `malloc` and `free`?
+         Arguments are passed through the r0 register. 
    2. Research the implementation (source code) of `malloc` and `free`.
    
 3. [malloc array](https://godbolt.org/z/bBl0zx)
    1. How does this case differ from the previous one?
+      The only functional difference between this case and the previous one is that 400 is being passed to malloc. This is because we are allocating 100 integers and integers are 4 bytes long, which is 400 bytes total.
    2. [**hard**] Write your own tiny `malloc` library by declaring a large `FILL` area and writing a `malloc` and a `free` subroutines that manage allocations to that memory area. 
       1. `malloc` works approximately as follows:
          - it takes as argument the number of bytes requested
